@@ -1,0 +1,167 @@
+{
+	"name": "blackbox",
+	"displayName": "Blackbox",
+	"description": "Code as fast as you think",
+	"version": "0.10.25",
+	"publisher": "Blackboxapp",
+	"icon": "icon.png",
+	"homepage": "https://www.useblackbox.io/",
+	"keywords": [
+		"keybindings",
+		"code-recommendation",
+		"autocomplete"
+	],
+	"engines": {
+		"vscode": "^1.34.0"
+	},
+	"bugs": {
+		"url": "https://www.useblackbox.io/"
+	},
+	"author": {
+		"name": "Blackbox",
+		"url": "https://www.useblackbox.io/"
+	},
+	"contributors": [],
+	"license": "",
+	"galleryBanner": {
+		"color": "#100f11",
+		"theme": "dark"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "blackbox",
+					"title": "BlackBox",
+					"icon": "$(bold)"
+				}
+			]
+		},
+		"views": {
+			"blackbox": [
+				{
+					"type": "webview",
+					"id": "blackbox-onboarding",
+					"name": "Space",
+					"contextualTitle": "BlackBox",
+					"icon": "$(bold)",
+					"visibility": "visible"
+				}
+			]
+		},
+		"configuration": {},
+		"commands": [
+			{
+				"command": "extension.disableBlackBoxAutoComplete",
+				"title": "Disable Blackbox Autocomplete"
+			},
+			{
+				"command": "extension.enableBlackBoxAutoComplete",
+				"title": "Enable Blackbox Autocomplete"
+			},
+			{
+				"command": "extension.clearBlackboxAutocomplete",
+				"title": "Clear Blackbox Autocomplete Lines"
+			},
+			{
+				"command": "extension.saveText",
+				"title": "Save as Blackbox Snippet"
+			},
+			{
+				"command": "blackbox.codeSearch",
+				"title": "Blackbox Repo Search",
+				"category": "blackbox"
+			},
+			{
+				"command": "blackbox.historySearch",
+				"title": "Blackbox Saved Snippets",
+				"category": "blackbox"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.saveText",
+				"key": "ctrl+alt+l",
+				"mac": "shift+cmd+i"
+			},
+			{
+				"command": "extension.acceptSuggestion",
+				"key": "tab",
+				"mac": "tab",
+				"when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorTabMovesFocus"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "extension.saveText",
+					"group": "Blackbox"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -watch -p ./",
+		"download-api": "vscode-dts dev",
+		"postdownload-api": "vscode-dts main",
+		"postinstall": "npx vscode-dts dev",
+		"test-compile": "tsc -p ./",
+		"prebuild": "npm run lint -- --fix",
+		"build": "vsce package -o ./out-vsix",
+		"test": "jest"
+	},
+	"devDependencies": {
+		"@types/jest": "^27.4.1",
+		"@types/node": "^14.15.0",
+		"@types/node-fetch": "^2.5.10",
+		"@typescript-eslint/eslint-plugin": "^4.16.0",
+		"@typescript-eslint/parser": "^4.16.0",
+		"bufferutil": "^4.0.3",
+		"esbuild": "^0.12.15",
+		"eslint": "^7.21.0",
+		"jest": "^27.5",
+		"node-loader": "^2.0.0",
+		"ts-jest": "^27.1.4",
+		"ts-loader": "^9.2.3",
+		"typescript": "^4.2.2",
+		"utf-8-validate": "^5.0.5",
+		"vscode": "1.1.37",
+		"vscode-dts": "^0.3.3",
+		"webpack": "^5.46.0",
+		"webpack-cli": "^4.7.2"
+	},
+	"dependencies": {
+		"@types/jsdom": "^16.2.12",
+		"jsdom": "^16.6.0",
+		"linkedom": "^0.11.1",
+		"node-fetch": "^2.6.7",
+		"open": "^8.4.0",
+		"socket.io-client": "^4.5.3",
+		"typescript-language-server": "^0.5.4",
+		"uuid": "^9.0.0",
+		"vsce": "^1.96.1"
+	},
+	"jest": {
+		"preset": "ts-jest",
+		"testEnvironment": "node"
+	},
+	"__metadata": {
+		"id": "29f905db-7b5e-4c4e-9295-02bf72a065d0",
+		"publisherId": "748d9dfd-c7c4-4ce2-b19d-7e4df254c5e8",
+		"publisherDisplayName": "BLACKBOX AI",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": true,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1675698313142,
+		"preRelease": false
+	}
+}
