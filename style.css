@@ -1,0 +1,73 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-image: url('image1.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+
+form {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Comic Sans MS;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+  
+  p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px;
+  }
+  
+  fieldset {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;}
+  
+  legend {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 10px;
+  }
+  
+  label {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  input[type="submit"] {
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  input[type="radio"]:checked + label {
+    background-color: #4CAF50; /* Set the background color to green */
+    color: white; /* Set the text color to white */
+  }
+  
+  
